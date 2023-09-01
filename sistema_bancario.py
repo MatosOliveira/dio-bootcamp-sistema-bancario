@@ -1,14 +1,20 @@
+import textwrap
+
 def menu():
-    menu = """
+    menu = """\n
 
     Digite a opção desejada:
 
-    [d] Depositar
-    [s] Sacar
-    [e] Extrato
-    [q] Sair
+    [d]\tDepositar
+    [s]\tSacar
+    [e]\tExibir Extrato
+    [c]\tCriar nova conta
+    [l]\tListar conta(s)
+    [u]\tCriar novo usuário
+    [q]\tSair
 
     => """
+    return input(textwrap.dedent(menu))
 
 def sacar(*, saldo, valor):
     if(numero_saques < LIMITE_DIARIO):
@@ -45,7 +51,7 @@ def main():
     valor_sacado = 0
 
     while True:
-        opcao = input(menu) 
+        opcao = menu()
         
         if opcao == "e":
             if (numero_saques == 0 and deposito == 0):
